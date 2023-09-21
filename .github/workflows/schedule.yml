@@ -5,9 +5,9 @@ name: Github-Trending
 
 on:
   schedule:
-    # - cron: "30 23 * * *"
-    # - cron: "30 23 * * 6"
-    - cron: "*/2 * * * *"
+    - cron: "30 23 * * *"
+    - cron: "30 23 * * 6"
+    # - cron: "*/2 * * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,12 +27,12 @@ jobs:
         pip install -r requirements.txt
         
     - name: Run Scraper
-      # if: github.event.schedule == '30 23 * * *'
+      if: github.event.schedule == '30 23 * * *'
       run: |
         python scraper_github_rending.py
 
     - name: Run Scraper week
-      # if: github.event.schedule == '30 23 * * 6'
+      if: github.event.schedule == '30 23 * * 6'
       run: |
         python scraper_github_rending_week.py
 
