@@ -15,6 +15,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      # with:
+      #   ref: main  # 在这里指定要检出的分支为 main
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
@@ -39,9 +41,9 @@ jobs:
     - name: push to origin master
       run: |
         echo start push
-        git config --global user.name "onefours"
-        git config --global user.email "onefours@gmail.com"
+        git config --global user.name "Cao Yanfei"
+        git config --global user.email "github@uyhnm.cn"
         
         git add -A
         git commit -m $(date '+%Y-%m-%d')
-        git push
+        git push 
