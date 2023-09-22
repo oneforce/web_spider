@@ -37,7 +37,6 @@ jobs:
         python scraper_github_rending_week.py
 
     # Runs a set of commands using the runners shell
-    - uses: actions/stale@v4
     - name: push to origin master
       run: |
         echo start push
