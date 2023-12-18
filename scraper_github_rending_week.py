@@ -83,7 +83,7 @@ def job():
     scrape('javascript', filename)
     scrape('typescript', filename)
     scrape('vue', filename)
-    
+    scrape('rust', filename)
     
 
     # git add commit push
