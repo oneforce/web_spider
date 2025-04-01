@@ -74,7 +74,7 @@ def scrape2(language, filename):
     if language == 'default':
         url = 'https://github.com/trending?spoken_language_code=zh'
     else:
-        url = 'https://github.com/trending/{language}?spoken_language_code=zh'.format(language=language)
+        url = 'https://github.com/trending?spoken_language_code=zh'
     r = requests.get(url, headers=HEADERS)
     assert r.status_code == 200
     
@@ -83,7 +83,7 @@ def scrape2(language, filename):
 
     # codecs to solve the problem utf-8 codec like chinese
     with codecs.open(filename, "a", "utf-8") as f:
-        f.write('\n#### {language}\n'.format(language=language))
+        f.write('\n#### {language} 中文\n'.format(language=language))
 
         for item in items:
             i = pq(item)
