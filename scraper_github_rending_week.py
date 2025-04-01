@@ -74,7 +74,7 @@ def scrape2(language, filename):
     if language == 'default':
         url = 'https://github.com/trending?since=weekly&spoken_language_code=zh'
     else:
-        url = 'https://github.com/trending/{language}?since=weekly&spoken_language_code=zh'.format(language=language)
+        url = 'https://github.com/trending?since=weekly&spoken_language_code=zh'
     r = requests.get(url, headers=HEADERS)
     assert r.status_code == 200
     
